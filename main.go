@@ -2,17 +2,19 @@ package main
 
 import (
 	"fmt"
+	"go-http-server/config"
+	"go-http-server/routes"
 	"net/http"
 )
-
-var PORT string = "8080"
 
 func main() {
 	// used to direct requests, think of it as a traffic controller
 	mux := http.NewServeMux()
 
-	// console log to show where sever is running
-	fmt.Println("Server Running On Port: " + PORT)
+	mux.HandleFunc("/posts", routes.GetAllPosts)
+
+	// console log to show where server is running
+	fmt.Println("Server Running On Port" + config.PORT)
 	// function that starts server
-	http.ListenAndServe(PORT, mux)
+	http.ListenAndServe(config.PORT, mux)
 }
