@@ -1,4 +1,6 @@
 # Simple Go Http Server
 
-This will be an http server created using Go that will reach out to an API to retrieve data
-
+## Purpose
+Using this as a way to learn Go  
+---
+Connected to jsonplaceholder to make requests
