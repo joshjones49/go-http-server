@@ -11,7 +11,9 @@ func main() {
 	// used to direct requests, think of it as a traffic controller
 	mux := http.NewServeMux()
 
-	mux.HandleFunc("/posts", routes.GetAllPosts)
+	// handlers for post related requests ===============>
+	mux.HandleFunc("GET /posts", routes.GetAllPosts)
+	mux.HandleFunc("GET /posts/{id}/comments", routes.GetCommentsForPost)
 
 	// console log to show where server is running
 	fmt.Println("Server Running On Port" + config.PORT)
