@@ -15,6 +15,9 @@ func main() {
 	mux.HandleFunc("GET /posts", routes.GetAllPosts)
 	mux.HandleFunc("GET /posts/{id}/comments", routes.GetCommentsForPost)
 
+	// handlers for users realated requests
+	mux.HandleFunc("GET /users", routes.GetAllUsers)
+
 	// console log to show where server is running
 	fmt.Println("Server Running On Port" + config.PORT)
 	// function that starts server
