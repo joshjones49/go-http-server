@@ -17,6 +17,7 @@ func main() {
 
 	// handlers for users realated requests
 	mux.HandleFunc("GET /users", routes.GetAllUsers)
+	mux.HandleFunc("GET /users/{id}/albums", routes.GetUserAlbums)
 
 	// console log to show where server is running
 	fmt.Println("Server Running On Port" + config.PORT)

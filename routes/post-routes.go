@@ -34,13 +34,13 @@ func GetCommentsForPost(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Invalid URL: missing /posts/", http.StatusBadRequest)
 		return
 	}
-	// removes the '/posts/ prefix leaving everything after
+	// removes the '/posts/' prefix leaving everything after
 	remainder := r.URL.Path[len(prefix):]
 	// finds the first occurance of comments
-	// returns the index of where it starts pr -1 if not found
+	// returns the index of where it starts returns -1 if not found
 	// avoids splitting into slices
 	idEnd := strings.Index(remainder, "/comments")
-	// isEnd will be -1 if it isn't found, or if it starts at position 0 (meaning no ID)
+	// idEnd will be -1 if it isn't found, or if it starts at position 0 (meaning no ID)
 	// both are invalid so return 400
 	if idEnd <= 0 {
 		http.Error(w, "Invalid URL: expected /posts/{id}/comments", http.StatusBadRequest)
