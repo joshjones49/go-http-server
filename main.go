@@ -15,7 +15,7 @@ func main() {
 	mux.HandleFunc("GET /posts", routes.GetAllPosts)
 	mux.HandleFunc("GET /posts/{id}/comments", routes.GetCommentsForPost)
 
-	// handlers for users realated requests
+	// handlers for users realated requests =============>
 	mux.HandleFunc("GET /users", routes.GetAllUsers)
 	mux.HandleFunc("GET /users/{id}/albums", routes.GetUserAlbums)
 

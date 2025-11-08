@@ -60,7 +60,7 @@ func GetCommentsForPost(w http.ResponseWriter, r *http.Request) {
 		http.Error(w, "Invalid URL: extra path segments", http.StatusBadRequest)
 		return
 	}
-	// contructs the API URL
+	// constructs the API URL
 	targetURL := config.URL + "/posts/" + postID + "/comments"
 	// makes get request to service
 	resp, err := http.Get(targetURL)
